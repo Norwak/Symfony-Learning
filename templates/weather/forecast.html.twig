@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Forecast for {{ city }}, {{ country_code }}{% endblock %}
+
+{% block body %}
+    {% for day in data %}
+        <h2>{{ day.date }}</h2>
+        <p>Temperature: {{ day.temperature }}°C</p>
+        <p>Feels like: {{ day.feels_like }}°C</p>
+        <p>Pressure: {{ day.pressure }}</p>
+        <p>Humidity: {{ day.humidity }}%</p>
+        <p>Wind: {{ day.wind }} m/s</p>
+        <p>Cloudiness: {{ day.cloudiness }}%</p>
+        <p>Icon {{ day.icon }}</p>
+    {% endfor %}
+{% endblock %}
